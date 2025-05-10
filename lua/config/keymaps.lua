@@ -1,6 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+vim.keymap.del("n", "<leader>n")
 
 -- stylua: ignore
 local keymaps = {
@@ -33,6 +34,7 @@ local keymaps = {
   { { "n", "t" }, "<c-/>", function() Snacks.terminal('fish') end, desc = "Toggle Terminal", noremap = true },
   { { "n", "t" }, "<c-\\>", function() Snacks.terminal() end, desc = "Toggle Terminal", noremap = true },
 
+  { "n", "<leader>nh", function() Snacks.picker.notifications() end, desc = "Notification History" },
 }
 
 -- Apply all keymaps
